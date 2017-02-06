@@ -1,0 +1,41 @@
+//
+//  AppStore_Prefix.pch
+//  AppStore
+//
+//  Created by 王宝 on 15/8/10.
+//  Copyright (c) 2015年 王宝. All rights reserved.
+//
+
+#ifndef AppStore_AppStore_Prefix_pch
+#define AppStore_AppStore_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "UIViewExt.h"
+#import "DataServer.h"
+
+#ifdef DEBUG
+#define CLog(format, ...) NSLog(format, ## __VA_ARGS__)
+#else
+#define CLog(format, ...)
+#endif
+
+#define RGBA(r,g,b,a)                   [UIColor colorWithRed:(float)r/255.0f green:(float)g/255.0f blue:(float)b/255.0f alpha:a]
+
+#define kVersion        [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+
+#define BaseURL         @"http://appstore.hongtiantech.com:80/v1/"
+
+#define downBaseURL     @"itms-services://?action=download-manifest&url="
+
+#define AESKey          @"1234567890123456"
+
+#define kScreenWidth    [UIScreen mainScreen].bounds.size.width
+
+#define kScreenHeight   [UIScreen mainScreen].bounds.size.height
+
+#define kCompanyPhone   @"010-60609428"
+
+#define kCompanyWebsite @"www.hongtiantech.com"
+
+#endif
